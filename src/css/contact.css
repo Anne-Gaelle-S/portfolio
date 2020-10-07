@@ -1,0 +1,38 @@
+/*----------------------------------------------------CONTACT------------------------------------------------------*/
+
+.coord > * { text-align: center; font-weight: bold; }
+.coord a{
+    display: inline-block; width: 10em; 
+    text-decoration: none; border: 5px solid transparent;
+    border-image: url("./../assets/simpleBorder.png") 33% stretch;  
+    background: url("./../assets/bg-interfaces.png"); 
+    background-origin: border-box; background-size: 100% 100%; 
+    transition: color .3s, box-shadow .3s; 
+}
+.coord a:hover { box-shadow: 1px 1px 2px black; color: var(--doreClair);}
+.coord a:focus { outline: dotted var(--marronRouge); }
+
+.contact{ display: inline-block; width: 100%; font-weight: bold; }
+.contact span{ display: flex; justify-content: center;  }
+.contact span > * {
+    border: 4px solid transparent;  padding: 10px;
+    border-image: url("./../assets/simpleBorder2.png") 33% stretch; 
+}
+.contact label{
+    display: flex; justify-content: center; align-items: center; color: var(--marronBeige);
+    background: url("./../assets/bg-interfaces.png"); background-size: 100% 100%;
+}
+.contact input, textarea{ background-color: var(--marronBeige); color: rgb(44, 33, 24);}
+.contact textarea{ min-height: 15em; }
+
+.contact input[type="submit"]{
+    height: 3em; color: var(--dore); margin: 10px; font-size: 1.1em;
+    background: url("./../assets/bg-interfaces.png"); background-size: 100% 100%;
+    border: 5px solid transparent; font-weight: bold;
+    border-image: url("./../assets/simpleBorder.png") 33% stretch;
+    transition: color .4s, box-shadow .4s; 
+}
+.contact input[type="submit"]:hover{ 
+    cursor: pointer; box-shadow: 1px 1px 2px black; 
+    color: var(--doreClair);
+}

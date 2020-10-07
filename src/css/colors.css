@@ -1,0 +1,15 @@
+:root {
+    --marronFonce: rgb(32, 24, 18);
+    --marron: rgb(124, 92, 62);
+    --marronClair: rgb(189, 153, 119);
+    --marronBeige: rgb(226, 185, 158);
+    --marronRouge: rgb(48, 21, 21);
+    --chocolat: rgb(53, 37, 30);
+    --chocolatLait: rgb(75, 54, 44);
+    --dore: rgb(230, 192, 68);
+    --doreClair: rgb(255, 228, 140);
+    --vert: rgb(6, 197, 6);
+    --gris: rgb(80, 76, 73);
+    --noir: rgb(20, 20, 20);
+    --blanc: rgb(241, 223, 206);
+}

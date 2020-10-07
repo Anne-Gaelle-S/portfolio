@@ -1,0 +1,94 @@
+.menu{
+    width: 100%; padding: 7px;
+    display: flex; flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Text on button */
+.m-profile::after { content: "Profile" } 
+.m-skill::after { content: "Skill" }
+.m-creative::after { content: "Creative" }
+.m-contact::after { content: "Contact" }
+[class*="m-"]::after {
+    position: relative;
+    font-size: 1em; font-weight: bold;
+}
+
+/* Gears on menu */
+[class*="gear-"]{
+    position: relative; z-index:1;
+    background-repeat: no-repeat; background-color: transparent; 
+    background-size: 100% 100%; border: none;
+    width: 8em; height: 8em; padding: 0; margin: 10px;
+    transition: transform .2s;
+}
+.gear-1{ background-image: url("./../assets/gear1.png"); }
+.gear-1-v2{ background-image: url("./../assets/gear1-v2.png"); }
+.gear-2{ background-image: url("./../assets/gear2.png"); }
+.gear-2-v2{ background-image: url("./../assets/gear2-v2.png"); }
+.gear-3{ background-image: url("./../assets/gear3.png"); }
+.gear-3-v2{ background-image: url("./../assets/gear3-v2.png"); }
+.gear-4{ background-image: url("./../assets/gear4.png"); }
+.gear-4-v2{ background-image: url("./../assets/gear4-v2.png"); }
+[class*="gear-"]:hover{ transform: rotate(20deg); }/*
+
+/* Others gears */
+[class*="mechanism-"]{
+    position: absolute; z-index:-1; width: 4em; height: 4em;
+    background: 100% / 100% no-repeat url("./../assets/gear0.png") ;   
+}
+.mechanism-0-1{ left: 5%; top: -50%; width: 3em; height: 3em; animation-delay: .1s; }
+.mechanism-0{ left: -3%; top: -33%; width: 8em; height: 8em; animation-delay: .2s; }
+.mechanism-1{ left: 18%; top: 7%; animation-delay: .3s;}
+.mechanism-2{ right: 18%; top: 7%; animation-delay: .3s; }
+.mechanism-3{ right: 0; top: -50%; width: 9.5em; height: 9.5em; animation-delay: .15s; }
+.rotationMenu{ animation: spin-gear 1.5s; }
+.rotation{ animation: spin 1.5s ease-in-out;  animation-delay: .3s; }
+.r-rotation{ animation: spin 1.5s ease-in-out reverse; animation-delay: .1s; }
+.stopRotation{ animation: none; }
+
+
+/* Hearthstone slot */
+.invisible{ display: none; position: absolute; z-index: 1; }
+.header{
+    position: relative; height: 100px; width: 100%;
+    display: flex; justify-content: center; align-items: center;
+    margin-top: 10px; padding: 0;
+}
+.oldMachine{
+    position: absolute; width: 100%; height: 100%;
+    background: center no-repeat url("./../assets/oldMachine.png");
+    background-size: auto 100%;
+}
+
+/* Titles */
+.header h1{ 
+    position: absolute;
+    width: 80%; max-width: 580px;
+    z-index: -1; perspective: 800px;
+    margin: 0; font-size: 2.4em; 
+    background-color: var(--marronRouge);
+    border: var(--dore) outset 3px;
+}
+.slotIn{ animation: oldMachineIn 1.5s ease-in; }
+.slotOut{ animation: oldMachineOut .5s ease-in; }
+
+/* For tablets: */
+@media only screen and (max-width: 1100px) { 
+    [class*="gear-"] {
+        margin: 0px; padding: 0px;
+        width: 7em; height: 7em;
+        animation: none; 
+    }
+    [class*="gear-"]:hover, [class*="gear-"]:hover {
+        animation: none;
+    }
+    [class*="gear-"]:focus { animation: spin-gear 1s; }
+    [class*="mechanism"]{  display: none; }
+}
+
+@media only screen and (max-width: 600px) {
+    /* For smartphone */
+    [class*="gear-"] {  width: 4em; height: 4em; }
+    .header{ height: 60px; }
+}

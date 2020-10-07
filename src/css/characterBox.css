@@ -1,0 +1,38 @@
+/*----------------------------------------------------CHARACTER BOX------------------------------------------------------*/
+.characterBox { 
+    display: flex; flex-wrap: wrap; justify-content: space-around;
+    background: var(--marronClair);
+    border: 7px solid transparent;
+    border-image: url("./../assets/simpleBorder.png") 33% stretch; 
+}
+.avatar {
+    flex-grow: 2; text-align: center; padding: 10px;
+    background: url("./../assets/bg-character.png"); background-size: 100% 100%;
+    border: 5px solid transparent;
+    border-image: url("./../assets/simpleBorder.png") 33% stretch;
+}
+.avatar ~ div { 
+    display: flex; flex-direction: column; flex-wrap: wrap; justify-content: center;
+}
+
+@media only screen and (max-width: 600px) { 
+    .avatar ~ div{ flex-direction: row; }
+}
+.stuff {
+    position: relative; z-index: 0; width: 5.5em; height: 5.5em; 
+    margin: 3px; border: 5px solid transparent;
+    border-image: url("./../assets/simpleBorder.png") 33% stretch;
+    background: url("./../assets/item-icon.png"); background-size: 100% 100%;
+}
+.stuff span{ 
+    position:absolute; width: 8em; z-index: 3;
+    margin-top: 3em; margin-left: 2em; padding: 7px; 
+    color: var(--vert); font-size: .9em; overflow: visible;
+    background:rgba(0,0,0,.9); text-align: center;
+    border-radius:3px; box-shadow:0 0 2px rgba(0,0,0,.5);
+    transform:scale(0) rotate(-12deg); transition: all .25s;
+}
+.stuff:hover span, .stuff:focus span{
+    transform:scale(1) rotate(0); opacity:1;       
+}
+.stuff:hover{ cursor: pointer; }
